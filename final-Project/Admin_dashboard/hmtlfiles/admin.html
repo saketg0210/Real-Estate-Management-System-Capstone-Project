@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../cssfiles/admin.css">
+    <link rel="stylesheet" href="../cssfiles/style.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button onclick="topFunction1()" id="myBtn" title="Go to top"><i class="fas fa-arrow-circle-up"></i></button>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="myTopnav">
+            <a class="navbar-brand" href="admin.html">REAL-X</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="admin.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDetails" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Details
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownDetails">
+                            <a class="dropdown-item"
+                                href="../bootstrap-5-table-with-pagination-and-search-and-sorting/index.html">User
+                                Table</a>
+                            <a class="dropdown-item" href="#properties">Add Property</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Propertylist.html">Listed Property</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="C:\Users\New\Downloads\Gl Pro\final cacpstone\Adminoruserlogin.html" >Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <article>
+        <section id="home" style="height: 70vh;">
+            <div class="company">
+                <h1>REAL-<span style="color: red; text-shadow: 0px 0px 5px white;">X</span></h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./admin.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Admin</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="update properties" id="properties">
+            <form id="projectForm">
+                <h1>Add New Property <i class="fa fa-plus" style="color: rgba(35, 193, 27, 0.874);"></i></h1>
+                <label for="image">Project Image URL:</label>
+                <input type="text" id="image" name="image" required>
+                <div><label style="width: 45%;" for="title">Title:</label><label style="width:45%;"
+                        for="price">Price:</label>
+                    <input type="text" style="width: 49%;" id="title1" name="title" required>
+
+                    <input type="number" style="width: 49%;" id="price1" name="price" required>
+                </div>
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" width="100%" required></textarea>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br>
+
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+            <!-- preive updates -->
+            <div class="bg-img" style="border-style: dashed;">
+                <center>
+                    <p class="h4 text-primary" style="margin-top:-1.2em;">Preview</p>
+                </center>
+                <div id="preview" class="preview" style="display:non;">
+                    <div class="previewcard">
+                       <div class="pre-img"> <img id="p-image" src="" width="100%" height="100%" alt="Avatar"></div>
+                        <div class="preview-container">
+                            <p class="h4" id="p-title">sample</p>
+                            <p id="p-price"></p>
+                            <p id="p-details"></p>
+                            <p id="p-location"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .previewcard {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                    transition: 0.3s;
+                    width: 100%;
+                    background-color: #fefefe;
+                }
+
+                .previewcard:hover {
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                }
+
+                .preview-container {
+                    padding: 2px 6px;
+                }
+            </style>
+        </section><br><br>
+        <center> <button onclick="showData()" class="btn btn-primary">Show/Hide Table</button></center>
+        <section id="admin-section" class="admin-class">
+            <!-- Add a button to toggle the table visibility -->
+            <table id="tb-data" class="table table-striped table-bordered">
+                <caption>Content</caption>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Details</th>
+                        <th>Location</th>
+                        <td><button style="border: none;background-color: transparent;"
+                                onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+                </thead>
+                <tbody id="result"></tbody>
+            </table>
+        </section>
+        <br><br>
+        <div class="row" style="border-bottom: #4cae4c;border: 1px solid;">
+            <section id="users">
+                <center>
+                    <h3 class="h1 txt-success">Agents profile cards</h3>
+                    <small>
+                        <p class="text-muted">These are premium users</p>
+                    </small>
+                </center>
+                <marquee behavior="" direction="left">
+                    <div class="user-grid">
+
+                        <!-- Example of a single user card -->
+                        <div class="user-card one">
+                            <img src="../img/agent-3.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">Kamal</h3>
+                            <p class="user-email">kamal@example.com</p>
+                            <p class="user-sold h6 text-dark">Items Sold:51</p>
+                        </div>
+                        <!-- second user -->
+                        <div class="user-card two">
+                            <img src="../img/agent-2.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">Salman Bhai</h3>
+                            <p class="user-email">Don.doe@example.com</p>
+                            <p class="user-sold h6 text-dark">Plot sold: 2</p>
+                        </div>
+                        <!-- user 3 -->
+                        <div class="user-card three">
+                            <img src="../img/agent-1.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">Arjun Kapoor</h3>
+                            <p class="user-email">ak203@example.com</p>
+                            <p class="user-sold h6 text-dark">Plot sold:34</p>
+                        </div>
+                        <!-- user 4 -->
+                        <div class="user-card four">
+                            <img src="../img/agent-5.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">John the Don</h3>
+                            <p class="user-email">Don.doe@example.com</p>
+                            <p class="user-sold h6 text-dark">Plot sold: 23</p>
+                        </div>
+                        <!-- user 5 -->
+                        <div class="user-card five">
+                            <img src="../img/agent-1.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">Devilson</h3>
+                            <p class="user-email">TheGreat@example.com</p>
+                            <p class="user-sold h6 text-dark">Plot sold: 43</p>
+                        </div>
+                        <!-- user 7 -->
+                        <div class="user-card six">
+                            <img src="../img/agent-7.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">Winz-sinzu</h3>
+                            <p class="user-email">Agent7@example.com</p>
+                            <p class="user-sold h6 text-dark">Plot Sold: 21</p>
+                        </div>
+                        <!-- user 8 -->
+                        <div class="user-card seven">
+                            <img src="../img/agent-6.jpg" alt="User Photo" class="user-photo">
+                            <h3 class="user-name">John the Don</h3>
+                            <p class="user-email">Don.doe@example.com</p>
+                            <p class="user-sold h6 text-dark">Plots Solde:32</p>
+                        </div>
+
+                        <!-- Repeat the above block for each user -->
+                    </div>
+                </marquee>
+            </section>
+        </div>
+        <section id="Stastics">
+
+            <center>
+                <p class="h3 text-danger">User1</p>
+            </center>
+            <div class="stats-container">
+                <div class=" data name" >Username</div>
+                <div class=" data id">User-id</div>
+                <div class=" data plot">Flat Purchased</div>
+                <div class="data size" >Flat Rented</div>
+            </div>
+            <div class="stats-container">
+                <div class="user-stats data name" id="u-name"></div>
+                <div class="user-stats data id" id="u-id"></div>
+                <div class="user-stats data plot" id="u-buyed"></div>
+                <div class="user-stats data size" id="u-rented"></div>
+            </div>
+          <center>  <button class="btn btn-success" id="getData">Show Details</button></center>
+        </section>
+        <br><br>
+        <section>
+            <div class="details">
+                <center>
+                    <p class="h3 text-primary">Get your dashboard ready with us</p>
+                </center>
+            </div>
+            <div
+                style="width: 100vw;height: 100vh;background-image: url(../quality/5741225.jpg);background-size:cover;background-repeat: no-repeat;">
+            </div>
+        </section>
+    </article>
+
+    <!-- Bootstrap JS and jQuery (required for the carousel) -->
+    <script src="../jsfiles/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../jsfiles/admin.js"></script>
+</body>
+
+</html>

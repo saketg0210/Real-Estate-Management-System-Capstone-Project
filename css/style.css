@@ -1,0 +1,104 @@
+body {
+    padding: 0%;
+    margin: 0%;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+/* nav bar */
+
+/* nav bar done */
+/* Form */
+.logout{
+    float: right;
+  }
+  nav >.logout a:hover{
+    color:#ff6347 !important ;
+    background-color: white;
+  }
+  
+/* Form ends */
+/* Section */
+section {
+    height: auto;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    margin: 10px;
+    overflow: hidden;
+    padding: 20px auto;
+}
+/* userdetails */
+.userdetails{
+    height: auto;
+    .row{
+        border: 1px solid;    
+        text-align: center;
+        .col-connect{
+            margin: 5px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            padding: auto 5px;
+        }
+    }
+}
+
+/* this is for cards property */
+
+/* services card ends */
+/* Info conatiner */
+.info-container{
+    max-width: 85%;
+    margin:10px auto;    
+}
+
+/* Section ends */
+/* responsive */
+@media (max-width: 768px) {
+    nav ul{
+        display: none;
+    }
+    #userdetails .row,form{
+        flex-direction: column;
+    }
+    #hamburger{
+        display: block;
+        transition: all 0.3s;
+    }
+    form {
+        max-width: 400px;
+        margin-top: 10%;
+    }
+
+    input[type="submit"] {
+        margin-left: 0;
+        font-size: 1em;
+    }
+    .carousel-item img{
+        max-height: 300px;
+        height: auto;
+        min-height: 150px;
+    }
+    .cards-carousal {
+        overflow: scroll;
+    }
+    .card{
+        min-width:180px;
+    }
+}
+
+
+.cards-carousal {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+/* subscribe form */

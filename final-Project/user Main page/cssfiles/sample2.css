@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 10px;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1100px;
+}
+
+.wrapper nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav .items {
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav .items .item {
+    padding: 7px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav .items .active,
+nav .items .item:hover {
+    color: #fff;
+    background: #007bff;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.gallery .image {
+    width: calc(100% / 4);
+    padding: 5px;
+    position: relative;
+}
+.image img{
+    height: 200px;
+}
+.gallery .image .text {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #fe21a2;
+    background-color: #fe21a2;
+    border-radius: 5px;
+}
+.gallery .image .text:hover{
+    box-shadow: 0px 0px 5px #fe21a2,
+                0px 0px 30px #fe21a2,
+                0px 0px 90px #fe21a2;
+}
+.gallery .image span {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .image img {
+    width: 100%;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.gallery .image:hover img {
+    transform: scale(1.1);
+}
+
+.gallery .image.hide {
+    display: none;
+}
+
+.gallery .image.show {
+    animation: animate 0.4s ease;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1000px) {
+    .gallery .image {
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery .image {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 700px) {
+    nav .items {
+        max-width: 600px;
+    }
+
+    nav .items .item {
+        padding: 7px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav .items {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav .items .item {
+        margin: 5px;
+    }
+
+    .gallery .image {
+        width: 100%;
+    }
+}

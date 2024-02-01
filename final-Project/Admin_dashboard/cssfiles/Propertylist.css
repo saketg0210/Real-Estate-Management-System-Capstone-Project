@@ -1,0 +1,111 @@
+body{
+  box-sizing: border-box;
+}
+article{
+  padding:10vh 20px;
+}
+.card {
+    min-width: 200px;
+    max-width: 250px;
+    height: 320px;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    box-shadow: 0 1px 3px #0000001f, 0 1px 2px rgba(0,0,0,0.24);
+   }
+   
+   .card-img {
+    background-color: #ffcaa6;
+    height: 40%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   
+   .card-info {
+    padding-top: 10%;
+   }
+   
+   
+   .card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fcfcfc;
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
+   }
+   
+   /*Text*/
+   .text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+   }
+   
+   .text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+   }
+   
+   /*Button*/
+   .card-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+   }
+   
+   /*Hover*/
+   .card-img:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   
+   .card-button:hover {
+    border: 1px solid #ffcaa6;
+    background-color: #ffcaa6;
+   }
+
+   .card-button{
+    transition: fill 0.4s ease; /* Add transition for a smooth color change */
+    cursor: pointer;
+  }
+
+  /* Color when toggled */
+  .card-button.Onchange {
+    transition: fill 0.4s ease-in-out;
+    background-color: white;
+    color: red;
+  }
+
+  .Property-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+
+     /* navigation button */
+     #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 30px;
+  }
+  
+  #myBtn:hover{
+      color: #ff1515;
+  }
+  /* nav link */

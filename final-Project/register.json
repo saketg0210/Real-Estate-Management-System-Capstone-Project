@@ -1,0 +1,20 @@
+{
+  "registeruser": [
+    {
+      "First_Name": "kumaran",
+      "last_name": "m",
+      "email": "kumaran0764@gmail.com",
+      "password": "0987654321",
+      "confirm_password": "0987654321",
+      "id": 1
+    },
+    {
+      "First_Name": "Naveen",
+      "last_name": "m",
+      "email": "naveen@gmail.com",
+      "password": "123456789",
+      "confirm_password": "123456789",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="../css/template.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <!-- <link rel="stylesheet" href="../css/card.css"> -->
+</head>
+<body>
+    <nav class="topnav" id="myTopnav">
+        <!-- <a href="#home" class="active">Home</a> -->
+        <a href="./index.html" id="logo"><b>Indegene</b></a>
+        <a href="#Contact">Contact</a>
+        <a href="#Services">About</a>
+        <a href="./update.html">Adminds pannel</a>
+        <a href="./userscopy.html">After login</a>
+        <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <main>
+        <section class="login">
+            <div class="container">
+                <form id="loginform">
+                    <p class="title">Login Form
+                    <p>
+                        <label for="uname">Username</label><br>
+                        <input type="text" name="uname" id="username" placeholder="Enter Username"><br>
+                        <label for="pwd">Password</label><br>
+                        <input type="password" name="pwd" id="password" placeholder="Enter password"><br>
+                        <input type="submit" value="Submit" onclick="signin()"><br>
+                        <span>Don't have an account? </span><a href="signup.html">click here</a>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="main-div">
+            <div class="container1">
+                <h2>Houzez</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus iure excepturi ut ipsum! Neque eos
+                    mollitia perspiciatis voluptatum, tenetur vero.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="container2">
+                <h2>Discover</h2>
+                <ul>
+                    <li><a href="#">Apartment</a></li>
+                    <li><a href="#">Family Home</a></li>
+                    <li><a href="#">Loft</a></li>
+                    <li><a href="#">Villa</a></li>
+                </ul>
+            </div>
+            <div class="container3">
+                <h2>Contact Us</h2>
+                <p><span class="symbol">&#128204;</span> 8728 Harbor Dr, Miami Beach FL</p>
+                <p><span class="symbol">&#9742;</span> 598 394 2304</p>
+                <p><span class="symbol">&#9993;</span> houzez@email.com</p>
+            </div>
+            <div class="container4">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <p>© Houzez - All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+    function signin() {
+    event.preventDefault();
+    const username= document.getElementById('username').value;
+    const pwd= document.getElementById('password').value;
+    console.log(username,pwd)
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", pwd);
+    const data=localStorage.getItem("username");
+    console.log(localStorage.getItem(username));
+    // seession 
+    // sessionStorage.setItem("username", username);
+    // sessionStorage.setItem("password", pwd);
+    // const pass=sessionStorage.getItem("pwd");
+    if(data=="Admin" && pwd=="Admin"){
+        alert("login successfull");
+        window.location.href="index.html";
+    }
+    else{
+        alert("login denied");
+}
+}
+    </script>
+    <script src="../js/template.js"></script>
+</body>
+
+
+</html>

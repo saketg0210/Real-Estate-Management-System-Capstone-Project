@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="./admin.css">
+    <style>
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .admin-class {
+            justify-self: flex-end;
+        }
+
+        .show-c {
+            margin: 10px auto;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="../css/card.css"> -->
+</head>
+
+<body>
+    <nav class="topnav" style="background-color: rgb(117, 117, 239);" id="myTopnav">
+        <!-- <a href="#home" class="active">Home</a> -->
+        
+        <a href="./login.html" id="logo">Indegene</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="./update.html">Property List</a>
+        <a href="#userlist.html">users list</a>
+        <a class="menu-list" href="#userdetails">userdetails </a>
+        <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <!--  -->
+    </nav>
+    <main>
+        <section style="margin:20px 10px">
+           <center> <h1>Project Details Form</h1></center>
+            <form id="projectForm">
+                <label for="image">Project Image URL:</label>
+                <input type="text" id="image" name="image" required><br>
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required><br>
+
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" width="100%" required></textarea><br>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br>
+
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+
+        </section>
+        <section id="admin-section" class="admin-class">
+            <div class="show-c">
+                <table id="tb-data">
+                    <caption>Content</caption>
+                    <thead>
+                        <tr>
+                            <td>Image</td>
+                            <td>Title</td>
+                            <td>price</td>
+                            <td>details</td>
+                            <td>Location</td>
+                        </tr>
+                    </thead>
+                    <tbody id="result"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="main-div">
+            <div class="container1">
+                <h2>Houzez</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus iure excepturi ut ipsum! Neque eos
+                    mollitia perspiciatis voluptatum, tenetur vero.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="container2">
+                <h2>Discover</h2>
+                <ul>
+                    <li><a href="#">Apartment</a></li>
+                    <li><a href="#">Family Home</a></li>
+                    <li><a href="#">Loft</a></li>
+                    <li><a href="#">Villa</a></li>
+                </ul>
+            </div>
+            <div class="container3">
+                <h2>Contact Us</h2>
+                <p><span class="symbol">&#128204;</span> 8728 Harbor Dr, Miami Beach FL</p>
+                <p><span class="symbol">&#9742;</span> 598 394 2304</p>
+                <p><span class="symbol">&#9993;</span> houzez@email.com</p>
+            </div>
+            <div class="container4">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <p>© Houzez - All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+    <script src="../js/template.js"></script>
+    <script>
+        function submitForm() {
+            // Get form data
+            var image = document.getElementById("image").value;
+            var title = document.getElementById("title").value;
+            var price = document.getElementById("price").value;
+            var details = document.getElementById("details").value;
+            var location = document.getElementById("location").value;
+            
+            //append data to table
+            if (image == "" || title === "" || price === "" || details === "" || location === "") {
+                alert("kindly fill the form");
+            } else {
+                var html = "";
+                html = `<tr>
+        <td>`+ image + `</td>
+        <td>`+ title + `</td>
+        <td>`+ price + `</td>
+        <td>`+ details + `</td>
+        <td>`+ location + `</td>
+    </tr>`;
+                var table = document.getElementById('result').innerHTML += html;
+                document.getElementById("image").value = "";
+                document.getElementById("title").value = "";
+                document.getElementById("price").value = "";
+                document.getElementById("details").value = "";
+                document.getElementById("location").value = "";
+
+            }
+            //json object
+            var formData = {
+                image: image,
+                title: title,
+                price: price,
+                details: details,
+                locnation: location
+            };
+            // Send data to a JSON API (replace URL with your actual API endpoint)
+            var apiUrl = "http://localhost:3000/data";
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the API response if needed
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
+

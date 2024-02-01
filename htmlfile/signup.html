@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="../css/template.css">
+</head>
+
+<body>
+    <nav class="topnav" id="myTopnav">
+        <!-- <a href="#home" class="active">Home</a> -->
+        <a href="./login.html" id="logo"><b>Indegene</b></a>
+        <a href="#dashboard">News</a>
+        <a href="#Contact">Contact</a>
+        <a href="#Services">About</a>
+        
+        <a class="menu-list" href="#userdetails">userdetails </a>
+        <a href="javascript:void(0);" class="icon1" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <main>
+        <section class="signup">
+            <div class="container">
+                <form>
+                    <p class="title">Signup</p>
+                    <label for="mail">Email</label><br>
+                    <input type="mail" name="mail" id="mail" placeholder="Enter E-mail"><br>
+                    <label for="uname">Username</label><br>
+                    <input type="text" name="uname" id="user" placeholder="Enter Username"><br>
+                    <label for="pwd">Password</label><br>
+                    <input type="password" name="pwd" id="pwd" placeholder="Enter password"><br>
+                    <input type="submit" value="Submit" onclick="register()"><br>
+                    <span>Already have an account? </span><a href="login.html">Sign in</a>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="main-div">
+            <div class="container1">
+                <h2>Houzez</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus iure excepturi ut ipsum! Neque eos
+                    mollitia perspiciatis voluptatum, tenetur vero.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="container2">
+                <h2>Discover</h2>
+                <ul>
+                    <li><a href="#">Apartment</a></li>
+                    <li><a href="#">Family Home</a></li>
+                    <li><a href="#">Loft</a></li>
+                    <li><a href="#">Villa</a></li>
+                </ul>
+            </div>
+            <div class="container3">
+                <h2>Contact Us</h2>
+                <p><span class="symbol">&#128204;</span> 8728 Harbor Dr, Miami Beach FL</p>
+                <p><span class="symbol">&#9742;</span> 598 394 2304</p>
+                <p><span class="symbol">&#9993;</span> houzez@email.com</p>
+            </div>
+            <div class="container4">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <p>© Houzez - All rights reserved</p>
+            </div>
+        </div>
+
+    </footer>
+    <script>function register() {
+        const User_mail = document.getElementById("mail").value;
+        const user_name = document.getElementById("user").value;
+        const userpassword = document.getElementById("pwd").value;
+        url = "http://localhost:3000/users";
+        //post API
+        fetch(url, {
+            method: "POST",
+            body: JSON.stringify({
+                email: User_mail,
+                username: user_name,
+                password: userpassword
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json()).then(json => alert("Account Created"));
+        window.location.href = 'login.html';
+        event.preventDefault();
+    }
+</script>
+    <script src="../js/template.js"></script>
+</body>
+
+</html>

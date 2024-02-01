@@ -1,0 +1,691 @@
+
+.navbar-brand {
+    font-weight: bold;
+  
+    font-size: 35px; /* Adjust the font size as needed */
+  }
+  .nav-link{
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+  
+  }
+  .nav-item active{
+    padding: 10px;
+  }
+  
+  /* Custom styles for carousel */
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+  }
+  .navbar-custom {
+    background-color: grey; 
+    color: white;/* Change the navbar color to your preference */
+  }
+  .nav-link:hover{
+    border-bottom: 3px solid white;
+  }
+  
+  .cars-text{
+    margin-left: 25rem;
+    margin-top: 2rem;
+  }
+  
+  /* scroll starts */
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 2;
+    background-color: transparent;
+    font-size: 30px;
+  }
+  
+  #myBtn:hover {
+    color: #f02a2a;
+  }
+  /* scroll ends */
+  /* aboutsection */
+  #myDIV {
+    display: none;
+  }
+  .about_main{
+    /* border :1px solid red; */
+    height: 500px;
+    width: 98vw;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin-top: 5rem;
+    margin-left: 0.8rem;
+    margin-right: 1rem;
+    
+     }
+     .abt-1{
+       /* border: 1px solid red; */
+       height: 400px;
+   
+     }
+     #about-1{
+       background-image: url(./quality/about.jpeg);
+       background-size: cover;
+     }
+     #about-2{
+       padding-left: 12px;
+       line-height: 1.5;
+       text-align: justify;
+       padding-right: 1rem;
+       font-size: 18px;
+     }
+     #showbtn{
+       color: white;
+       background-color: rgb(37, 36, 36);
+       height: 2rem;
+       width: 9rem;
+       border:1px solid transparent;
+       font-weight: bolder;
+       
+     }
+     #myDIV{
+       line-height: 1.5;
+       font-style: italic;
+     }
+     #about-sec{
+      background-color: #eeeeee;
+      margin-bottom: 3rem;
+     }
+  
+  
+     /* mediaqueries for about section */
+     @media (max-width:1137px){
+      #about-2{
+        font-size: 16px;
+        line-height: 1;
+      }
+      #myDIV{
+        line-height: 1;
+      }
+     }
+     @media (max-width:657px){
+      #about-2{
+        font-size: 13px;
+        line-height: 1;
+      }
+      #about-sec{
+        height:600px
+      }
+    }
+  
+    @media (max-width:380px){
+      #about-2{
+        font-size: 13px;
+        line-height: 1;
+      }
+      #about-sec{
+        height:800px
+      }
+    }
+  
+    /* agents section */
+    #agents{
+    
+      /* border: 1px solid red; */
+      height: 700px;
+      width: 98vw;
+    }
+    #agenttxt{
+      font-family:'Times New Roman', Times, serif;
+      font-size: 48px;
+      font-weight: bolder;
+       font-style: oblique;
+      margin-top: 20px;
+      color: grey;
+    }
+  
+    .main {
+      /* border: 1px solid red; */
+      height: 400px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin-top: 10px;
+  }
+  
+  .flip-card {
+      width: 300px;
+      height: 500px;
+      /* border: 1px solid red; */
+      margin: 10px;
+      
+  }
+  
+  .flip-card-inner {
+      width: 100%;
+      height: 500px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+  }
+  
+  .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+      background-color: #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .flip-card-back {
+      background-color: grey;
+      /* border: 1px outset grey; */
+      color: black;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .btn-1 {
+      height: 5rem;
+      width: 100px;
+      background-color: #04AA6D;
+      border: 1px solid transparent;
+      position: relative;
+      margin-top: 10px;
+  }
+  .fa{
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px, 2px;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+  background: #3B5998;
+  color: white;
+  }
+  
+  .fa-twitter {
+  background: #55ACEE;
+  color: white;
+  }
+  
+  .fa-google {
+  background: #dd4b39;
+  color: white;
+  }
+  
+  .fa-linkedin {
+  background: #007bb5;
+  color: white;
+  }
+  
+  .fa-youtube {
+  background: #bb0000;
+  color: white;
+  }
+  .backward-btn{
+    margin-top: 15px;
+    background-color:white;
+    border: 1px solid transparent;
+    height: 40px;
+    width: 80px;
+  }
+  .flip-card-back >p{
+    padding-left: 10px;
+  }
+    
+  /* /services\ */
+  
+  #main-serv{
+    height: 700px;
+    width: 98vw;
+    /* margin-bottom: 5rem; */
+    /* border: 1px solid red; */
+    margin-bottom: 5rem;
+    
+  }
+  
+  #design-ser
+  {
+    /* border:1px solid red; */
+    height: 450px;
+    width: 98vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:10px;
+    position: relative; top:8rem;
+    
+    
+  }
+  
+  #service-section{
+   background-color: #eeeeee ;
+  }
+  
+  .sec1{
+    border: 1px solid white;
+    background-color: white;
+    height: 400px;
+    width: 350px;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0px 0px 20px rgb(109, 108, 108) ;
+     display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  
+  .cont-sec{
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    line-height: 2rem;
+    font-style: italic;
+  }
+  
+  /* media queries for services + agents*/
+  @media (max-width:981px)
+  {
+    #service-section{
+     position: relative;
+     top:40rem;
+    }
+    #agenttxt{
+      font-size: 40px;
+    }
+  }
+    
+  @media (max-width:659px)
+  {
+    #service-section{
+     position: relative;
+     top:80rem;
+    }
+    #agenttxt{
+      font-size: 30px;
+    }
+  }
+  @media (max-width:969px)
+  {
+    .sec1{
+     font-size: 16px;
+    } 
+    
+  }
+  @media (max-width:1094px)
+  {
+     
+    #service-section{
+     height: 1000px;
+    }
+  }
+  @media (max-width:722px)
+  {
+     
+    #service-section{
+     height: 90rem;
+    }
+  }
+  /* featured section */
+  
+  /* Discovered location features */
+  .main-div{
+    display: flex;
+    flex-wrap: wrap;
+   
+    align-items: center;
+  }
+  .container1{
+    height: 200px;
+    width: 300px;
+    padding: 20px;
+    margin-left: 10rem;
+    position: relative;
+    top: 5rem;
+  }
+  .container1 h2{
+    font-size: 30px;
+  }
+  .container1 .btn{
+    background-color: rgb(243, 57, 57);
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: larger;
+  }
+  .btn:hover{
+    opacity: 0.7;
+  }
+  .my-class1,.my-class4{
+    height: 200px;
+    width: 270px;
+    background-image: url("https://demo14.houzez.co/wp-content/uploads/2020/03/fl.jpg");
+    background-size: 270px 200px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+  .my-class2,.my-class3{
+    height: 300px;
+    width: 270px;
+    background-image: url("https://demo14.houzez.co/wp-content/uploads/2020/03/miami.jpg");
+    background-size: 270px 300px;
+    background-repeat: no-repeat;
+    margin-top: 1rem;
+    border-radius: 10px;
+  
+  }
+  .cont:hover{
+    opacity: 0.7;
+  }
+  .cont a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 10rem;
+    margin-left: 10px;
+  }
+  .abt p{
+    color: white;
+    padding: 10px 0px 10px 20px;
+    
+  }
+  .abt h3{
+    color: white;
+    position: relative;
+    bottom: 20px;
+    padding-left: 10px;
+  }
+  .my-class1 a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 4rem;
+    margin-left: 1rem;
+  }
+  .my-class3{
+    margin-left: 8rem;
+    background-image: url("https://demo14.houzez.co/wp-content/uploads/2020/03/mf.jpg");
+  }
+  .my-class4{
+    margin-left: 8rem;
+    margin-top: 2rem;
+    background-image: url("https://demo14.houzez.co/wp-content/uploads/2020/03/tampa-2.43.30-PM.jpg");
+  }
+  @media only screen and (max-width: 768px) {
+    .main-div {
+        flex-direction: column;
+    }
+  
+    .container1 {
+        margin-left: 0;
+        margin-bottom: 5rem;
+    }
+  
+    .container2, .container3 {
+        margin-top: 1rem;
+    }
+  
+    .my-class2, .my-class3, .my-class4 {
+        margin-left: 0;
+    }
+  }
+    
+  
+  @media (max-width:1005px)
+  {
+    #featured-sec{
+     position: relative;
+     top:10rem;
+    }
+  }
+  @media (max-width:980px)
+  {
+    #featured-sec{
+     position: relative;
+     top:18rem;
+  
+    }
+    .main-div{
+      position: relative;
+      top:12rem;
+    }
+    .container2{
+      position: relative;
+      top:16rem;
+    }
+  }
+  @media (max-width:760px)
+  {
+    .container1{
+      position: relative;
+      top:15rem;
+    }
+  }
+  
+  @media (max-width:709px)
+  {
+    #featured-sec{
+      position: relative;
+      top:15rem;
+    }
+    .main-div{
+      position: relative;
+      top:12rem;
+    }
+  }
+     @media (max-width:761px)
+     {
+      .container3{
+        position: relative;
+        top: 17rem;
+      }
+     }
+     @media (max-width:660px)
+  {
+    /* #featured-sec{
+      position: relative;
+      top:29rem;
+    } */
+    .main-div{
+  margin-top: 40rem;
+    }
+  }
+  #title{
+    position: relative; top: 4rem;font-family:'Times New Roman', Times, serif;
+              font-size: 48px;
+              font-weight: bolder;
+               font-style: oblique;
+              margin-top: 20px;
+              color: grey;
+  }
+  
+  .card{
+  /* padding: 15px; */
+  /* border: 1px solid red; */
+  margin: 10px;
+  margin-top: 6rem;
+  
+  }
+  .slider{
+    height: 500px;
+    
+  
+  }
+  .title{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .content{
+    background-color: #eeeeee;
+  }
+  .fea-sec{
+    border: 1px solid  red;
+    background-color:  rgb(243, 57, 57);
+    color: white;
+    
+  }
+  .view{
+    font-size: 20px;
+    color:  rgb(243, 57, 57);
+  }
+  #btn-web{
+    background-color:  rgb(243, 57, 57);
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+    color: white;
+    font-variant: small-caps;
+    font-weight: bolder;
+    border-radius: 20px;
+    margin-top: 2rem;
+  }
+  
+  /* mediaqueries for featured prop */
+  @media (max-width:1010px)
+  {
+    #caro-fea{
+      margin-top: 16rem;
+    }
+  }
+  
+  @media (max-width:982px)
+  {
+    #caro-fea{
+  position: relative;
+  top: 15rem;  }
+  }
+  @media (max-width:760px)
+  {
+    #caro-fea{
+  position: relative;
+  top: 30rem;  }
+  }
+  
+  /* media query for view more */
+@media (max-width:990px)
+{
+  #btn-web{
+    margin-top: 4rem;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+@media (max-width:970px)
+{
+  #btn-web{
+    margin-top: 4rem;
+  }
+}
+@media (max-width:550px)
+{
+  #btn-web{
+    margin-top: 6rem;
+  }
+}
+@media (max-width:400px)
+{
+  #btn-web{
+    margin-top: 6rem;
+  }
+  .title{
+    font-size: 12px;
+  }
+  .view{
+    font-size: 12px;
+  }
+}
+
+@media (max-width:300px)
+{
+  #btn-web{
+    margin-top: 8rem;
+  }
+}
+@media (max-width:280px)
+{
+  #fea-text{
+    font-size: 12px;
+    font-weight: lighter;
+  }
+}
+
+/* login-section */
+.box 
+{
+  padding: 10px;
+}
+
+footer{
+    /* position: fixed; */
+     bottom: 0; 
+    width: 100%; 
+    background-color: black;
+    font-weight: bold;
+    font-variant: small-caps;
+    height: auto;
+   
+  }
+  #footer {
+    margin-top: auto; /* Push the footer to the bottom */
+  }
+
+  .my-class{
+    text-decoration: none;
+  }
+  .my-class:hover{
+    color: rgb(232, 92, 92);
+  }
+  .icon{
+    padding: 13px;
+  }
+  .icon:hover{
+    color: blue;
+  }
+
+  @media (max-width:990px)
+  {
+    footer{
+      margin-top: 16rem;
+    }
+  }
+  @media (max-width:773px)
+  {
+    footer{
+      margin-top: 30rem;
+    }
+  }
+
+  /* login */
+  
+  
+  
